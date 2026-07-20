@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鄂州市红莲湖临空农产品交易大市场</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--primary:#1a6b3c;--accent:#e8b840}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#1a1a1a;background:#fafaf8;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 2px 16px rgba(0,0,0,.1)}
+nav .inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+nav .logo{font-size:18px;font-weight:700;color:var(--primary)}
+nav .nav-links{display:flex;gap:32px;list-style:none}
+nav .nav-links a{font-size:14px;color:#1a1a1a;font-weight:500;text-decoration:none}
+nav .nav-links a:hover{color:var(--primary)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:26px;height:2.5px;background:#1a1a1a;border-radius:2px}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center;background:linear-gradient(135deg,#0f4a28,#1a6b3c,#2a5a3a)}
+.hero h1{font-size:clamp(32px,5vw,56px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:16px}
+.hero h1 span{color:var(--accent)}
+.hero .sub{font-size:clamp(16px,2.2vw,24px);color:rgba(255,255,255,.85);margin-bottom:32px}
+.hero .stat{display:inline-block;margin:0 24px;text-align:center;color:#fff}
+.hero .stat .n{font-size:32px;font-weight:800;color:var(--accent)}
+.hero .stat .l{font-size:13px;color:rgba(255,255,255,.7)}
+.hero .cta{display:inline-block;margin-top:32px;padding:14px 40px;background:var(--accent);color:#1a1a1a;font-size:16px;font-weight:700;border-radius:50px;text-decoration:none}
+.section{padding:80px 24px}
+.section-alt{background:#f0f2ee}
+.inner{max-width:1200px;margin:0 auto}
+.sh{text-align:center;margin-bottom:48px}
+.sh h2{font-size:clamp(26px,3.5vw,38px);font-weight:700;margin-bottom:8px}
+.sh p{font-size:15px;color:#555;max-width:600px;margin:0 auto}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.card{background:#fff;border-radius:8px;padding:32px 24px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.card .ic{width:48px;height:48px;margin:0 auto 16px;background:rgba(26,107,60,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{font-size:14px;color:#555;line-height:1.5}
+.col2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:768px){.col2{grid-template-columns:1fr;gap:24px}}
+.tl{position:relative;padding-left:32px}
+.tl::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:var(--primary)}
+.tli{position:relative;padding-bottom:32px}
+.tli::before{content:"";position:absolute;left:-22px;top:4px;width:12px;height:12px;border-radius:50%;border:3px solid var(--primary);background:#fff}
+.tli.act::before{background:var(--accent);border-color:var(--accent)}
+.tld{font-size:13px;color:var(--primary);font-weight:700}
+.tli.act .tld{color:var(--accent)}
+.tlt{font-size:16px;font-weight:600}
+.tlds{font-size:14px;color:#555}
+.ib{background:#fff;border-radius:8px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:20px}
+.ib h3{font-size:18px;font-weight:700;margin-bottom:12px}
+.ib p,.ib li{font-size:14px;color:#555;line-height:1.6}
+.ib ul{list-style:none;padding:0}
+.ib li{padding:4px 0 4px 16px;position:relative}
+.ib li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:768px){.g2{grid-template-columns:1fr}}
+.pb{background:#fff;border-radius:8px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.pb .lb{display:inline-block;padding:4px 12px;font-size:12px;font-weight:700;border-radius:4px;margin-bottom:12px}
+.pb .lb.g{background:var(--primary);color:#fff}
+.pb .lb.y{background:var(--accent);color:#1a1a1a}
+.zg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.zi{background:#f0f2ee;border-radius:6px;padding:12px 8px;text-align:center;font-size:14px;font-weight:500}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.fc{background:#fff;border-radius:8px;padding:24px 20px;box-shadow:0 4px 20px rgba(0,0,0,.08);border-left:4px solid var(--primary)}
+.fc h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.fc p{font-size:14px;color:#555;line-height:1.6}
+.sr{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:32px}
+.si{text-align:center;padding:24px 16px;background:#fff;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.si .n{font-size:36px;font-weight:800;color:var(--primary)}
+.si .l{font-size:14px;color:#555;margin-top:4px}
+.bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.bc{background:#fff;border-radius:8px;padding:28px 24px;box-shadow:0 4px 20px rgba(0,0,0,.08);position:relative;overflow:hidden}
+.bc .no{position:absolute;top:8px;right:16px;font-size:48px;font-weight:900;color:rgba(26,107,60,.06)}
+.bc h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.bc p{font-size:14px;color:#555;line-height:1.6}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.tc{text-align:center;background:#fff;border-radius:8px;padding:24px 16px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.tc .av{width:64px;height:64px;border-radius:50%;margin:0 auto 12px;background:rgba(26,107,60,.08);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:var(--primary)}
+.tc h4{font-size:16px;font-weight:700}
+.tc .ro{font-size:13px;color:var(--primary);margin-top:4px;font-weight:600}
+.tm{text-align:center;margin-top:20px;font-size:14px;color:#555}
+footer{background:#0d2e1a;color:rgba(255,255,255,.6);padding:40px 24px;text-align:center;font-size:14px}
+footer .brand{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px}
+.cp{margin-top:16px;font-size:12px;opacity:.5}
+@media(max-width:768px){
+  nav .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(255,255,255,.98);flex-direction:column;gap:0;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+  nav .nav-links.open{display:flex}
+  nav .nav-links a{padding:16px 24px;border-bottom:1px solid #eee}
+  .hamburger{display:flex}
+  .section{padding:56px 20px}
+}
+</style>
+</head>
+<body>
+<nav id="navbar"><div class="inner"><div class="logo">红莲湖临空农产品市场</div><ul class="nav-links" id="navLinks"><li><a href="#overview">项目概况</a></li><li><a href="#timeline">建设历程</a></li><li><a href="#planning">总体规划</a></li><li><a href="#benefits">综合效益</a></li><li><a href="#team">核心团队</a></li></ul><button class="hamburger" id="hamburger"><span></span><span></span><span></span></button></div></nav>
+<section class="hero"><div style="position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px"></div><div style="position:relative;z-index:1;padding:40px 24px;max-width:900px"><div style="display:inline-block;padding:6px 20px;border:1px solid rgba(255,255,255,.2);border-radius:50px;font-size:13px;color:var(--accent);margin-bottom:28px">湖北省 2025 年度重点项目</div><h1>红莲湖临空农产品<br><span>交易大市场</span></h1><p class="sub">华中地区农产品保供及安全食品保障中心 · 大型农产品物流集散枢纽中心</p><div style="display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-bottom:32px"><div class="stat"><div class="n">2000</div><div class="l">亩总规模</div></div><div class="stat"><div class="n">135万</div><div class="l">m²建筑面积</div></div><div class="stat"><div class="n">70亿</div><div class="l">总投资</div></div><div class="stat"><div class="n">1000亿</div><div class="l">预计年交易额</div></div></div><a href="#overview" class="cta">探索项目</a></div></section>
+<section class="section" id="overview"><div class="inner"><div class="sh"><h2>项目概况</h2><p>立足华中、辐射全国、链接国际的现代化智慧农批枢纽</p></div><div class="grid4"><div class="card"><div class="ic">📍</div><h3>项目位置</h3><p>鄂州市华容区庙岭镇，武黄高速南侧、鄂咸高速以西，距离花湖机场 30km</p></div><div class="card"><div class="ic">📐</div><h3>建设规模</h3><p>总占地 2000 亩，一期 1200 亩，二期 800 亩，总建筑面积约 135 万 m²</p></div><div class="card"><div class="ic">💰</div><h3>投资总额</h3><p>总投资 70 亿元，建设工期 18 个月，打造华中最大农产品集散中心</p></div><div class="card"><div class="ic">🎯</div><h3>战略定位</h3><p>华中农产品保供及安全食品保障中心（双保障中心），链接国际的智慧农批枢纽</p></div></div></div></section>
+<section class="section section-alt" id="timeline"><div class="inner"><div class="sh"><h2>建设历程</h2><p>项目关键节点一览</p></div><div class="col2"><div class="tl"><div class="tli"><div class="tld">2024 年 9 月 11 日</div><div class="tlt">项目公司成立</div><div class="tlds">武汉光谷临空农产品市场有限公司正式成立</div></div><div class="tli"><div class="tld">2024 年 10 月 30 日</div><div class="tlt">省发改委备案</div><div class="tlds">湖北省发改委项目备案完成</div></div><div class="tli"><div class="tld">2024 年 11 月 15 日</div><div class="tlt">纳入省重点项目库</div><div class="tlds">纳入湖北省招商引资重点项目库</div></div><div class="tli"><div class="tld">2024 年 11 月 26 日</div><div class="tlt">农业农村厅批复</div><div class="tlds">湖北省农业农村厅同意列为全省农业重点项目</div></div><div class="tli"><div class="tld">2024 年 12 月 25 日</div><div class="tlt">七通一平动工</div><div class="tlds">配套基础设施项目动工仪式盛大举行</div></div><div class="tli"><div class="tld">2025 年 2 月 18 日</div><div class="tlt">纳入省级重点项目</div><div class="tlds">纳入湖北省 2025 年省级重点项目清单</div></div><div class="tli"><div class="tld">2025 年 3 月 28 日</div><div class="tlt">项目开工</div><div class="tlds">项目正式开工</div></div><div class="tli act"><div class="tld">2026 年 12 月（预计）</div><div class="tlt">一期开业</div><div class="tlds">项目一期预计正式开业运营</div></div></div><div><div class="ib"><h3>政策背景</h3><ul><li>《十四五全国农产品产地市场体系发展规划》— 完善以国家级市场为龙头的三级产地市场体系</li><li>《加快建设全国统一大市场的意见》— 优化商贸流通基础设施布局，推动数字化转型</li><li>湖北省十四五规划 — 加强农产品物流骨干网络和冷链物流体系建设</li><li>黄冈-鄂州-黄石功能型流通战略支点城市建设方案 — 构建高效农产品物流服务网络</li></ul></div><div class="ib"><h3>领导关怀</h3><p>鄂州市委常委、副市长卢辉出席"七通一平"动工仪式并宣布动工，副市长、华容区委书记任蔚致辞，华容区委副书记、区长龚俊主持动工仪式。项目已被列入湖北省发改委、农业农村厅、商务厅 2025 年度重点项目。</p></div></div></div></div></section>
+<section class="section" id="planning"><div class="inner"><div class="sh"><h2>总体规划 · "两轴九片区"</h2><p>分两期建设，打造全业态农产品交易生态</p></div><div class="g2"><div class="pb"><div class="lb g">一期 · 1200 亩</div><div class="zg"><div class="zi">蔬菜交易区</div><div class="zi">水产交易区</div><div class="zi">海鲜交易区</div><div class="zi">水果交易区</div><div class="zi">粮油交易区</div><div class="zi">干调交易区</div><div class="zi">配套商业</div><div class="zi">检验检测</div></div></div><div class="pb"><div class="lb y">二期 · 800 亩</div><div class="zg"><div class="zi">冻品交易区</div><div class="zi">仓储加工</div><div class="zi">冷链物流</div><div class="zi">电子商务</div><div class="zi">供应链中心</div><div class="zi">城市配送</div><div class="zi">农产品出口</div><div class="zi">预制菜产业</div></div></div></div><h3 style="font-size:20px;font-weight:700;text-align:center;margin:40px 0 24px">项目功能体系</h3><div class="g3"><div class="fc"><h3>基础保障</h3><p>农产品集散与供应保障，应急物资储备，农产品价格形成与市场定价中枢</p></div><div class="fc"><h3>信息中枢</h3><p>全产业链数据整合，智能分析与预警，信息传导枢纽</p></div><div class="fc"><h3>智能化与数字化</h3><p>电子交易结算系统，智能运营管理，Web3/AIGC 构建农批可信数据空间</p></div><div class="fc"><h3>质量安全管控</h3><p>入市检测体系，全程溯源管理，全产业链存证</p></div><div class="fc"><h3>产业带动与区域服务</h3><p>三产融合平台，农民增收机制，订单农业对接</p></div><div class="fc"><h3>产销衔接与供应链管理</h3><p>订单农业对接，物流优化调度，城市配送网络</p></div></div></div></section>
+<section class="section section-alt" id="benefits"><div class="inner"><div class="sh"><h2>综合效益</h2><p>经济效益、社会效益与城市发展多重价值</p></div><div class="sr"><div class="si"><div class="n">1000亿+</div><div class="l">预计年交易额</div></div><div class="si"><div class="n">5万+</div><div class="l">直接就业岗位</div></div><div class="si"><div class="n">10亿+</div><div class="l">年综合纳税额</div></div><div class="si"><div class="n">1500万t+</div><div class="l">年农产品交易量</div></div></div><div class="bg"><div class="bc"><div class="no">01</div><h3>经济效益</h3><p>总建筑面积约 135 万 m²，商业经营面积达 70 万 m²，容纳十大业态，预计年交易额可达 1000 亿元以上。形成集农产品交易、冷链物流、加工制造、仓储配送于一体的完整产业链。</p></div><div class="bc"><div class="no">02</div><h3>民生保障</h3><p>满足武汉城市圈超过 2000 万市民的日常生活需求，提供便捷丰富的购物选择。预计日均客流量超过 5 万人次。</p></div><div class="bc"><div class="no">03</div><h3>惠农增收</h3><p>直接连接农户和消费者，减少中间环节，降低交易成本。引入现代农业技术，推动产业升级，打造特色农产品品牌，有效增加农民收入。</p></div><div class="bc"><div class="no">04</div><h3>就业创业</h3><p>直接解决约 5 万人的就业问题，间接带动周边农产品批发、餐饮、住宿等产业发展。吸引超过 4000 家商户入驻。</p></div><div class="bc"><div class="no">05</div><h3>城市功能提升</h3><p>推动华容区道路、绿化、城市景观等基础设施全面升级，带动学校、餐饮、宾馆、医院等公共服务设施大建设，推动城乡一体化发展。</p></div><div class="bc"><div class="no">06</div><h3>城乡交流与融合</h3><p>促进城乡之间经济、文化、教育、科技等多领域互动。建设全球农副产品展示中心，举办各类文化活动、展览和演出。</p></div></div></div></section>
+<section class="section" id="team"><div class="inner"><div class="sh"><h2>核心团队</h2><p>三人核心决策组，权责到人、高效协同</p></div><div class="tg"><div class="tc"><div class="av">宋</div><h4>宋建平</h4><div class="ro">组长 · 项目总负责人</div></div><div class="tc"><div class="av">周</div><h4>周华新</h4><div class="ro">副组长</div></div><div class="tc"><div class="av">刘</div><h4>刘炎彬</h4><div class="ro">副组长</div></div></div><div class="tm">运营主体：武汉光谷临空农产品市场有限公司 · 莱福士投资集团有限公司</div></div></section>
+<footer><div class="inner"><div class="brand">鄂州市红莲湖临空农产品交易大市场</div><p>华中地区农产品保供及安全食品保障中心 · 大型农产品物流集散枢纽中心</p><p>湖北 · 鄂州 · 武汉新城核心区</p><div class="cp">&copy; 2026 武汉光谷临空农产品市场有限公司</div></div></footer>
+<script>
+var nav=document.getElementById("navbar");
+window.addEventListener("scroll",function(){nav.classList.toggle("scrolled",window.scrollY>60);});
+var hb=document.getElementById("hamburger");
+var nl=document.getElementById("navLinks");
+if(hb){hb.addEventListener("click",function(){nl.classList.toggle("open");});}
+if(nl){nl.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){nl.classList.remove("open");});});}
+document.querySelectorAll("a[href^='#']").forEach(function(a){a.addEventListener("click",function(e){var t=document.querySelector(a.getAttribute("href"));if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"});}});});
+</script>
+</body>
+</html>
